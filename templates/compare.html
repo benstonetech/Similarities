@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- lefthand column -->
+    <div class="row">
+        <div class="col-6">
+            <pre>{{ file1 | safe }}</pre>
+        </div>
+
+        <!-- righthand column -->
+        <div class="col-6">
+            <pre>{{ file2 | safe }}</pre>
+        </div>
+    </div>
+
+    <div style="text-align: center">
+        <p> Compare more files <div class="btn btn-secondary"><a href="/" style="color: white; text-decoration: none">Go Back</a></div></p>
+    </div>
+
+
+{% endblock %}

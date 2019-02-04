@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+
+            <p style="margin-top: 60px"> Similarities is a Web App that allows users to compare two files for similarities in three different ways </p>
+            <ol style>
+                <li> Lines </li>
+                <li> Sentences</li>
+                <li> Substrings</li>
+            </ol>
+            <p> Each method is useful in their own way, for example, lines could be used for comparing source code files whereas sentences is better suited to comparing longer extracts of text </p>
+            <p> I have prepared some example documents so you can quickly see how the application is able to find and higlight similarities between files.</p>
+            <button class="btn btn-primary"> <a style="color: white; text-decoration: none"href="https://drive.google.com/uc?export=download&id=1ft-FrHJCZFd-6d8bKcSXg7H1hCbpksT7" download>Download</a></button>
+
+            <hr />
+
+        <form action="/compare" enctype="multipart/form-data" method="post" style="text-align: left">
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" name="algorithm" id="algorithm" onchange="checkSubstrings()">
+
+                  <option>Lines</option>
+                  <option>Sentences</option>
+                  <option>Substrings</option>
+
+                </select>
+             </div>
+
+            <div class="form-group" id="substring-length-group" style="display: none">
+                <label for="substring-length">Substring Length</label>
+                <input type="number" name="length" class="form-control" id="substring-length" value="1" min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="file1">File 1</label>
+                <input  type="file" class="form-control-file " id="file1" name="file1">
+            </div>
+
+            <div class="form-group">
+                <label for="file2">File 2</label>
+                <input  type="file" class="form-control-file " id="file2" name="file2">
+            </div>
+
+
+            <br />
+            <button type="submit" class="btn btn-primary btn-block" style="margin-top: 15px"> Compare </button>
+
+
+        </form>
+
+
+
+
+    <script type="text/javascript">
+
+        function checkSubstrings(){
+            var compareType = document.getElementById("algorithm").value;
+            var subLength = document.getElementById("substring-length-group")
+            if (compareType == "Substrings"){
+                subLength.style.display='block'
+            } else {
+                subLength.style.display='none'
+            }
+        }
+    </script>
+
+{% endblock %}
