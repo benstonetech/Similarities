@@ -33,9 +33,31 @@ pre
     padding: 15px;
     white-space: pre-wrap;
 }
+#myColumn{
+    flex:1;
+}
+
+#myCard {
+    width: 100%;
+}
+
+#myFooter {
+    background-color: #BCBCBC;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+
+}
+
+.flex-fill {
+    flex:1;
+}
 
 /* Highlight spans */
 span
 {
     background-color: #ff0;
+}
+body {
+    background-color: #F4F4F4;
 }

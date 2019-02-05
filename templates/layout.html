@@ -15,18 +15,21 @@
         <title>Similarities</title>
 
     </head>
-    <body>
+    <body style="display: flex; min-height: 100vh; flex-direction: column">
 
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <a class="navbar-brand" href="/">Similarities</a>
         </nav>
 
-        <div class="container">
+        <div class="container  d-flex h-100 flex-column" style="flex-grow:1 ">
 
                 {% block body %}{% endblock %}
 
         </div>
+        <div id="myFooter">
 
+            &copy; 2019 - www.benstone.tech
+        </div>
         <!-- Optional JavaScript -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
